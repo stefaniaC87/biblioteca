@@ -1,0 +1,38 @@
+<div class="container my-3">
+    <h1>Aggiungi libro</h1>
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+                <label>ISBN: </label>
+                <input class="form-control" type="text" placeholder="isbn" [(ngModel)]="newBook.ISBN" [class.error]="error.ISBN" [attr.placeholder]="error.ISBN?' 13 cifre':' codice ISBN'">
+            </div>
+
+            <div class="form-group">
+                <label>Titolo: </label>
+                <input class="form-control" type="text" placeholder="titolo" [(ngModel)]="newBook.title" [class.error]="error.title" [attr.placeholder]="error.title?' campo obbligatorio':' titolo'">
+            </div>
+
+            <div class="form-group">
+                <label>Autore: </label>
+                <input class="form-control" type="text" placeholder="autore" [(ngModel)]="newBook.author" [class.error]="error.author" [attr.placeholder]="error.author?' campo obbligatorio':' autore'">
+            </div>
+
+            <div class="form-group">
+                <label>Editore: </label>
+                <input class="form-control" type="text" placeholder="editore" [(ngModel)]="newBook.publisher" [class.error]="error.publisher" [attr.placeholder]="error.publisher?' campo obbligatorio':' editore'">
+            </div>
+
+            <div class="form-group">
+                <label>Data di pubblicazione: </label>
+                <input class="form-control" type="date" [(ngModel)]="newBook.publicationDate" [class.error]="error.publicationDate">
+            </div>
+
+            <div class="form-group">
+                <label>Copertina libro: </label>
+                <input type="text" class="form-control" [(ngModel)]="newBook.coverUrl" [class.error]="error.coverUrl" [attr.placeholder]="error.coverUrl?' campo obbligatorio':' URL dell\'immagine'">
+            </div>
+            <input type="button" value="aggiungi libro" (click)="add()" class="submit">
+        </div>
+    </div>
+
+</div>
