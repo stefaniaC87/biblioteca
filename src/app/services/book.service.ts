@@ -44,7 +44,7 @@ BOOKS = [
     coverUrl: "assets/images/breaking.jpg"
   },
 ]
-
+selectedBook: Book;
 getBooks(): Observable<Book[]> {
   this.books = this.localStorage.retrieve("books") || this.BOOKS;
   return of(this.books);

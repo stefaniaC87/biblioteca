@@ -1,0 +1,41 @@
+<div class="container my-3">
+    <h1>Modifica libro</h1>
+    <div *ngIf="bookService.selectedBook">
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <label>ISBN: </label>
+                    <input class="form-control" type="text" placeholder="isbn" [(ngModel)]="bookService.selectedBook.ISBN">
+                </div>
+
+                <div class="form-group">
+                    <label>Titolo: </label>
+                    <input class="form-control" type="text" placeholder="titolo" [[(ngModel)]="bookService.selectedBook.title">
+                </div>
+
+                <div class="form-group">
+                    <label>Autore: </label>
+                    <input class="form-control" type="text" placeholder="autore" [ [(ngModel)]="bookService.selectedBook.author">
+                </div>
+
+                <div class="form-group">
+                    <label>Editore: </label>
+                    <input class="form-control" type="text" placeholder="editore" [(ngModel)]="bookService.selectedBook.publisher">
+                </div>
+
+                <div class="form-group">
+                    <label>Data di pubblicazione: </label>
+                    <input class="form-control" type="date" [ngModel]="bookService.selectedBook.publicationDate | date: 'yyyy-MM-dd'" (ngModelChange)="bookService.selectedBook.publicationDate = $event">
+                </div>
+
+                <div class="form-group">
+                    <label>Copertina libro: </label>
+                    <input type="text" class="form-control" [(ngModel)]="bookService.selectedBook.coverUrl">
+                </div>
+                <input type="button" value="salva modifica libro" (click)="save()" class="submit">
+            </div>
+        </div>
+    </div>
+
+
+</div>
